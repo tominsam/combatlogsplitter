@@ -29,7 +29,7 @@ open(file) do |file|
             if output
                 output.close
             end
-            filename = "combatlog_#{ timestamp.iso8601 }.txt"
+            filename = "combatlog_#{ timestamp.iso8601.gsub(/[:\-\+]+/,'') }.txt"
             #while File.exist? filename
             #    filename.gsub!(/.txt$/, "#{ rand(10000) }.txt")
             #end
